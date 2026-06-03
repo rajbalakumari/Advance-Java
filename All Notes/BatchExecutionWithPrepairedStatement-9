@@ -1,0 +1,108 @@
+package com.nit.Execution;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class BatchExecutionWithPreparedSt {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Password");(Put Your Password)
+
+        
+        String query="INSERT INTO TRAVELER VALUES(?,?,?,?)";
+        PreparedStatement ps=conn.prepareStatement(query);
+        
+        ps.setString(1, "Rama");
+        ps.setString(2, "BIKE"); 
+        ps.setString(3, "DL-OD");
+        ps.setInt(4, 2);
+        
+        ps.addBatch();
+        
+        ps.setString(1, "Ranu");
+        ps.setString(2, "CYCLE");
+        ps.setString(3, "HYD-AM");
+        ps.setInt(4, 2);
+        
+        
+        ps.addBatch();
+       
+        
+        
+        int[] rows=ps.executeBatch();
+		conn.close();
+		System.out.println("No of rows inserted is:"+rows.length);
+		System.out.println("Data Has Been Inserted Sucessfully...");
+               
+
+	}
+
+}
+
+
+
+package com.nit.Execution;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DemoBatchExecution {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Password");(Put Your Password)
+
+		Statement s=conn.createStatement();
+		
+		//s.execute("INSERT INTO CUSTOMER VALUES(100,'MOBILE',17000,'OD')");
+		//s.execute("INSERT INTO CUSTOMER VALUES(101,'LAPTOP',60000,'UP')");
+		//s.execute("INSERT INTO CUSTOMER VALUES(102,'LCD',20000,'HYD')");
+		//s.execute("INSERT INTO CUSTOMER VALUES(103,'REFREEZ',25000,'KN')");
+		
+		s.addBatch("INSERT INTO CUSTOMER VALUES(104,'BOOK',500,'OD')");
+		s.addBatch("INSERT INTO CUSTOMER VALUES(105,'TEDY',900,'MH')");
+		
+		int[]rows=s.executeBatch();
+		
+		conn.close();
+		System.out.println("No of rows inserted is: "+rows.length);
+		System.out.println("Data Has Been Inserted Sucessfully...");
+		
+	}
+
+}
+
+
+package com.nit.Execution;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TravelerAbout {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Password");(Put Your Password)
+
+        Statement s=conn.createStatement();
+        
+        s.addBatch("INSERT INTO TRAVELER VALUES('MOHAMAD','THAR','HYD-MH',3)");
+		s.addBatch("INSERT INTO TRAVELER VALUES('SURESH','BIKE','MH-KL',3)");
+		
+		int[]rows=s.executeBatch();
+		
+		conn.close();
+		System.out.println("No of rows inserted is: "+rows.length);
+		System.out.println("Data Has Been Inserted Sucessfully...");
+	}
+
+}
