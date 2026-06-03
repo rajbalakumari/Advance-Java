@@ -12,7 +12,7 @@ public class Program1 {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//"jdbc:mysql://localhost:3306/jdbc2_db39","root","root"
 		//2.establish the connection
-        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Subham@123");
+        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Root");
         //3.Create Statement
         Statement s=conn.createStatement();
         //4.execute the query
