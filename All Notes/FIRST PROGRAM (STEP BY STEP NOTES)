@@ -1,0 +1,213 @@
+### JDBC – FIRST PROGRAM (STEP BY STEP NOTES)
+
+## 1. What is JDBC?
+
+**JDBC (Java Database Connectivity)** is an API used to connect **Java applications with databases** such as MySQL, Oracle, etc.
+
+Using JDBC we can perform database operations like:
+
+• Insert data
+• Update data
+• Delete data
+• Retrieve data
+
+These operations are called **CRUD operations**.
+
+---
+
+# 2. Requirements for JDBC Program
+
+Before writing a JDBC program, we need:
+
+• JDK installed
+• Eclipse IDE
+• MySQL Server
+• MySQL Workbench
+• MySQL JDBC Driver (mysql-connector.jar)
+
+---
+
+# 3. Steps to Create First JDBC Program
+
+There are **5 main steps** in JDBC:
+
+1. Import JDBC package
+2. Load and Register Driver
+3. Establish Connection
+4. Create Statement
+5. Execute Query
+6. Close Connection
+
+---
+
+# 4. Step 1 – Create Database in MySQL
+
+Open **MySQL Workbench** and run the following commands:
+
+```sql
+create database javadb;
+
+use javadb;
+
+create table student
+(
+id int,
+name varchar(20),
+marks int
+);
+```
+
+---
+
+# 5. Step 2 – Create Java Project in Eclipse
+
+1. Open Eclipse
+2. Click **File → New → Java Project**
+3. Give project name **JDBCProject**
+4. Click **Finish**
+
+---
+
+# 6. Step 3 – Add MySQL JDBC Driver
+
+1. Download **mysql-connector.jar**
+2. Right click on **Project**
+3. Click **Build Path → Configure Build Path**
+4. Select **Libraries**
+5. Click **Add External JARs**
+6. Select **mysql-connector.jar**
+7. Click **Apply and Close**
+
+---
+
+# 7. Step 4 – Create Java Class
+
+1. Right click **src folder**
+2. Click **New → Class**
+3. Class name: **JdbcExample**
+4. Select **main method**
+5. Click **Finish**
+
+---
+
+# 8. Step 5 – First JDBC Program (Insert Data)
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class JdbcExample 
+{
+    public static void main(String[] args) 
+    {
+        try
+        {
+            // Step 1: Load Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Step 2: Create Connection
+            Connection con = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/javadb","root","Password");(Change your Password)
+
+            // Step 3: Create Statement
+            Statement st = con.createStatement();
+
+            // Step 4: Execute Query
+            String query = "insert into student values(1,'Hari',90)";
+            st.executeUpdate(query);
+
+            System.out.println("Data Inserted Successfully");
+
+            // Step 5: Close Connection
+            con.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+---
+
+# 9. Running the Program
+
+Steps:
+
+1. Right click the Java file
+2. Click **Run As**
+3. Select **Java Application**
+
+Output:
+
+```
+Data Inserted Successfully
+```
+
+Now the data will be stored in the **student table**.
+
+---
+
+# 10. Verify Data in MySQL
+
+Open **MySQL Workbench** and run:
+
+```sql
+select * from student;
+```
+
+Output example:
+
+| id | name   | marks |
+| -- | ------ | ----- |
+| 1  | Hari   | 90    |
+
+---
+
+# 11. JDBC Architecture (Simple Flow)
+
+Java Application
+↓
+JDBC API
+↓
+JDBC Driver
+↓
+Database
+
+---
+
+# Conclusion
+
+JDBC allows Java programs to communicate with databases.
+By using JDBC we can perform **database operations such as insert, update, delete, and select** directly from Java applications.
+
+FIRST PROGRAM
+---------------
+package com.nit.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Program1 {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//1.load The Driver
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		//"jdbc:mysql://localhost:3306/jdbc2_db39","root","root"
+		//2.establish the connection
+        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db_54", "root", "Password");(Change your Password)
+        //3.Create Statement
+        Statement s=conn.createStatement();
+        //4.execute the query
+        s.execute("INSERT INTO STUDENT VALUES(101,'Rohit','CSE',768200)");
+        //5.CLOSE THE CONNECTION
+        conn.close();
+        System.out.println("Data has Inserted Sucessfully.....");
+        
+	}
+
+}
