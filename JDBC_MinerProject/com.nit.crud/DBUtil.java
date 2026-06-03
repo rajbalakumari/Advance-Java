@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBUtil {
     private static final String url="jdbc:mysql://localhost:3306/jdbc_minerproject";
     private static final String user_name="root";
-    private static final String password="Subham@123";
+    private static final String password="Password");(Put Your Password)
     
     public static Connection getConnection() throws ClassNotFoundException, SQLException
     {
