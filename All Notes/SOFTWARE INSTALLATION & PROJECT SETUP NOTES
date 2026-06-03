@@ -1,0 +1,222 @@
+### ADVANCED JAVA – SOFTWARE INSTALLATION & PROJECT SETUP NOTES
+
+This note explains the required software for **Advanced Java development**, how to install them, add **JRE in Eclipse**, install **MySQL Workbench**, and create a **Java file in Eclipse to run a program**.
+
+---
+
+# 1. Required Software for Advanced Java
+
+To start Advanced Java development, the following software are required:
+
+• **JDK (Java Development Kit)** – Used to develop and compile Java programs
+• **JRE (Java Runtime Environment)** – Used to run Java programs
+• **Eclipse IDE** – Used to write and execute Java code
+• **Apache Tomcat Server** – Used to run Servlets and JSP applications
+• **MySQL Server** – Database to store application data
+• **MySQL Workbench** – Tool to manage MySQL database
+• **JDBC Driver (MySQL Connector)** – Used to connect Java with MySQL database
+
+---
+
+# 2. JDK Installation
+
+JDK is required to develop Java applications.
+
+### Steps:
+
+1. Open the official Java website.
+2. Download the latest **JDK** version.
+3. Double click the downloaded installer.
+4. Click **Next**.
+5. Select installation location.
+6. Click **Install**.
+7. After installation click **Finish**.
+
+Now JDK is installed successfully.
+
+---
+
+# 3. JRE Installation
+
+JRE is used to execute Java programs.
+
+### Steps:
+
+1. Download **JRE** from the Java website.
+2. Open the installer file.
+3. Click **Next**.
+4. Wait for installation to complete.
+5. Click **Finish**.
+
+Now JRE is installed.
+
+---
+
+# 4. Installing Eclipse IDE
+
+Eclipse is used to develop Java applications.
+
+### Steps:
+
+1. Download **Eclipse IDE for Java Developers**.
+2. Open the downloaded **Eclipse Installer**.
+3. Select **Eclipse IDE for Java Developers**.
+4. Click **Install**.
+5. Wait for installation to complete.
+6. Launch Eclipse.
+
+---
+
+# 5. Adding JRE in Eclipse
+
+### Steps:
+
+1. Open **Eclipse IDE**.
+2. Click **Window** in the menu.
+3. Select **Preferences**.
+4. Go to **Java → Installed JREs**.
+5. Click **Add**.
+6. Select **Standard VM**.
+7. Click **Next**.
+8. Click **Directory** and select the installed **JRE folder**.
+9. Click **Finish**.
+10. Click **Apply and Close**.
+
+Now JRE is added to Eclipse.
+
+---
+
+# 6. Installing Apache Tomcat Server
+
+Tomcat server is required to run **Servlets and JSP applications**.
+
+### Steps:
+
+1. Download **Apache Tomcat Server**.
+2. Extract the downloaded zip file.
+3. Open **Eclipse**.
+4. Go to **Servers tab**.
+5. Click **New → Server**.
+6. Select **Apache Tomcat version**.
+7. Browse the Tomcat installation folder.
+8. Click **Finish**.
+
+Tomcat server is now configured in Eclipse.
+
+---
+
+# 7. Installing MySQL Server
+
+MySQL is used to store application data.
+
+### Steps:
+
+1. Download **MySQL Server** from the MySQL website.
+2. Open the installer.
+3. Choose **Developer Default Setup**.
+4. Click **Next**.
+5. Set **root password**.
+6. Complete installation.
+7. Click **Finish**.
+
+Now MySQL Server is installed.
+
+---
+
+# 8. Installing MySQL Workbench
+
+MySQL Workbench is a graphical tool used to manage databases.
+
+### Steps:
+
+1. Download **MySQL Workbench**.
+2. Open the installer.
+3. Click **Next**.
+4. Select **Complete Setup**.
+5. Click **Install**.
+6. Wait for installation to complete.
+7. Click **Finish**.
+
+Now MySQL Workbench is installed.
+
+---
+
+# 9. Download MySQL JDBC Driver
+
+JDBC driver is required to connect Java with MySQL.
+
+### Steps:
+
+1. Download **MySQL Connector/J**.
+2. Extract the zip file.
+3. Copy the **mysql-connector.jar** file.
+4. Add this jar file to your Java project **Build Path** in Eclipse.
+
+---
+
+# 10. Creating a Java Project in Eclipse
+
+### Steps:
+
+1. Open **Eclipse IDE**.
+2. Click **File → New → Java Project**.
+3. Enter **Project Name**.
+4. Click **Finish**.
+
+A new Java project will be created.
+
+---
+
+# 11. Creating a Java File in Eclipse
+
+### Steps:
+
+1. Right click on **src folder**.
+2. Click **New → Class**.
+3. Enter **Class Name**.
+4. Select **public static void main()** option.
+5. Click **Finish**.
+
+Now a Java file is created.
+
+---
+
+# 12. Writing a Simple Java Program
+
+Example:
+
+public class HelloWorld
+{
+public static void main(String[] args)
+{
+System.out.println("Hello Advanced Java");
+}
+}
+
+---
+
+# 13. Running the Java Program in Eclipse
+
+### Steps:
+
+1. Right click on the Java file.
+2. Click **Run As**.
+3. Select **Java Application**.
+
+The output will appear in the **Console window**.
+
+---
+
+# Conclusion
+
+For Advanced Java development, the following setup is required:
+
+JDK
+JRE
+Eclipse IDE
+Apache Tomcat Server
+MySQL Server
+MySQL Workbench
+JDBC Driver
+
+After installing these tools and creating a project in Eclipse, we can start developing **Advanced Java applications like JDBC, Servlets, and JSP**.
