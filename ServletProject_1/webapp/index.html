@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated First Servlet Page</title>
+    <style>
+        /* Body with animated gradient background */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #2a7ae2, #e22a7a, #22e2a1, #f2f2f2);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        /* Container for the content */
+        .container {
+            position: relative; 
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 80px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease forwards;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #2a7ae2;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease forwards;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            animation: fadeUp 2s ease forwards;
+        }
+
+        /* Floating shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .shape1 { width: 40px; height: 40px; background: #2a7ae2; top: 20%; left: 10%; animation-delay: 0s;}
+        .shape2 { width: 30px; height: 30px; background: #e22a7a; top: 70%; left: 20%; animation-delay: 2s;}
+        .shape3 { width: 50px; height: 50px; background: #22e2a1; top: 40%; left: 80%; animation-delay: 4s;}
+        .shape4 { width: 20px; height: 20px; background: #f2a22a; top: 80%; left: 60%; animation-delay: 6s;}
+
+        /* Animations */
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0; transform: scale(0.8);}
+            100% {opacity: 1; transform: scale(1);}
+        }
+
+        @keyframes slideIn {
+            0% {opacity: 0; transform: translateY(-50px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes fadeUp {
+            0% {opacity: 0; transform: translateY(50px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0);}
+            50% { transform: translateY(-30px) translateX(20px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My First Servlet Page</h1>
+        <p>This page is fully animated using CSS. Enjoy!</p>
+    </div>
+
+    <!-- Floating shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+    
+    <a href="Subham">Click Me</a>
+</body>
+</html>
