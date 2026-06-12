@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Login</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        width: 350px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #2c5364;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .input-group input:focus {
+        border-color: #2c5364;
+        outline: none;
+        box-shadow: 0 0 6px rgba(44,83,100,0.5);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #2c5364;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #203a43;
+        transform: scale(1.03);
+    }
+
+    .extra {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .extra a {
+        text-decoration: none;
+        color: #2c5364;
+        font-size: 14px;
+    }
+
+    .extra a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🔐 Student Login</h2>
+
+    <form action="login" method="post">
+
+        <div class="input-group">
+            <label>Roll Number</label>
+            <input type="number" name="roll" required>
+        </div>
+
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <div class="extra">
+        <a href="index.html">⬅ Back to Home</a>
+    </div>
+
+</div>
+
+</body>
+
+</html>
