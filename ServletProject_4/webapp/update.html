@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Student</title>
+
+<style>
+body {
+    margin:0;
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#ff9966,#ff5e62);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:300px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input, button {
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+}
+
+button {
+    background:#ff5e62;
+    color:white;
+    border:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+<h2>Update Student</h2>
+
+<form action="update" method="get">
+    Enter Roll: <input type="number" name="roll"><br>
+    <button type="submit">Fetch Data</button>
+</form>
+
+</div>
+
+</body>
+</html>
