@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    text-align: center;
+    margin-top: 80px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* password container */
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    width: 250px;
+}
+
+/* eye icon */
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+
+<script>
+function togglePassword() {
+    var pwd = document.getElementById("password");
+    var eye = document.getElementById("eye");
+
+    if (pwd.type === "password") {
+        pwd.type = "text";
+        eye.innerHTML = "🙈";
+    } else {
+        pwd.type = "password";
+        eye.innerHTML = "👁️";
+    }
+}
+</script>
+
+</head>
+<body>
+
+<h1>Welcome To Form...</h1>
+
+<form action="demo.jsp" method="post">
+
+<label>Name:</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<label>Email:</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<label>Password:</label>
+
+<div class="password-box">
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <span class="eye" id="eye" onclick="togglePassword()">👁️</span>
+</div>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
