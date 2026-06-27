@@ -8,7 +8,7 @@ public class StudentDao {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("subh");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bala");
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
 
